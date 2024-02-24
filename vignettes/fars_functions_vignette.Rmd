@@ -28,7 +28,7 @@ The `"fars_read"` function allows users to read FARS data from a csv file. It ta
 
 ```{r echo = FALSE}
 # Example
-data_2013 <- fars_read("path/to/accident_2013.csv.bz2")
+data_2013 <- fars_read("data/accident_2013.csv.bz2")
 ```
 
 ## Creating file name
