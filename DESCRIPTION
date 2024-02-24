@@ -1,0 +1,15 @@
+Package: farsfunctions
+Type: Package
+Title: FARS Functions
+Version: 0.1.0
+Author: hr
+Maintainer: hr <hr@somewhere.net>
+Description: Provides functions to read, analyze, and visualize data from the Fatality Analysis Reporting System (FARS), a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+Suggests: 
+    knitr,
+    rmarkdown
+RoxygenNote: 7.2.3
