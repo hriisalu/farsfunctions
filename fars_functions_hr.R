@@ -14,7 +14,7 @@
 #' @param filename Path to the csv file as a character string.
 #'
 #' @importFrom readr read_csv
-#' @importFrom dplyr tbl_df
+#' @importFrom tibble as_tibble
 #'
 #' @return A tibble containing the data
 #'
@@ -31,7 +31,7 @@ fars_read <- function(filename) {
   data <- suppressMessages({
     readr::read_csv(filename, progress = FALSE)
   })
-  dplyr::tbl_df(data)
+  tibble::as_tibble(data)
 }
 
 #' Creating file name
@@ -51,7 +51,7 @@ fars_read <- function(filename) {
 #'
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("accident_%d.csv.bz2", year)
+  sprintf("data/accident_%d.csv.bz2", year)
 }
 
 #' Reading FARS data for multiple years
@@ -109,13 +109,22 @@ fars_read_years <- function(years) {
 #' @export
 #'
 fars_summarize_years <- function(years) {
-  dat_list <- fars_read_years(years)
-  dat_list %>%
+  dat_list <- fars_read_years(years) %>%
     dplyr::bind_rows() %>%
     dplyr::group_by(year, MONTH) %>%
     dplyr::summarize(n = n()) %>%
     tidyr::spread(year, n)
+  return(dat_list)
 }
+# fars_summarize_years <- function(years) {
+#   dat_list <- fars_read_years(years) %>%
+#     dplyr::bind_rows() %>%
+#     dplyr::group_by(.[[1]], .[[2]]) %>%
+#     dplyr::summarize(n = n()) %>%
+#     dplyr::rename(month = `.[[1]]`, year = `.[[2]]`) %>%
+#     tidyr:: spread(year, n)
+#   return(dat_list)
+# }
 
 #' Mapping FARS data for a specific state and year
 #'
