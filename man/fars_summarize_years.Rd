@@ -7,7 +7,7 @@
 fars_summarize_years(years)
 }
 \arguments{
-\item{years}{A vector of years}
+\item{years}{A vector of years, years as integers.}
 }
 \value{
 A tibble summarizing the number of accidents per month for each year

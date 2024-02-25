@@ -7,7 +7,7 @@
 make_filename(year)
 }
 \arguments{
-\item{year}{The year for which the filename is generated}
+\item{year}{The year for which the filename is generated as integer.}
 }
 \value{
 A character string representing the generated filename

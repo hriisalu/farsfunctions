@@ -7,7 +7,7 @@
 fars_read_years(years)
 }
 \arguments{
-\item{years}{A vector of years}
+\item{years}{A vector of years, years as integers.}
 }
 \value{
 A list of tibbles, each containing data for a specific year

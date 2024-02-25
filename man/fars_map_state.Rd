@@ -7,9 +7,9 @@
 fars_map_state(state.num, year)
 }
 \arguments{
-\item{state.num}{The state number}
+\item{state.num}{The state number as integer.}
 
-\item{year}{The year for which the data is plotted}
+\item{year}{The year for which the data is plotted as integer.}
 }
 \value{
 A plot of FARS data on a map

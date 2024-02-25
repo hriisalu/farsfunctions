@@ -7,7 +7,7 @@
 fars_read(filename)
 }
 \arguments{
-\item{filename}{Path to the csv file}
+\item{filename}{Path to the csv file as a character string.}
 }
 \value{
 A tibble containing the data
