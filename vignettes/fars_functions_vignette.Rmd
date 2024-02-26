@@ -1,8 +1,8 @@
 ---
-title: "fars_functions_vignette"
+title: "FARS Functions Vignette"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fars_functions_vignette}
+  %\VignetteIndexEntry{FARS Functions Vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 library(farsfunctions)
 library(dplyr)
 ```
@@ -27,45 +27,49 @@ The `"farsfunctions"` package provides functions to work with the Fatality Analy
 
 The `"fars_read"` function allows users to read FARS data from a csv file. It takes the path to the csv file as input and returns a tibble containing the data. If the file does not exist, an error message is displayed.
 
-```{r echo = FALSE}
+```{r}
 # Example
-data_2013 <- fars_read("data/accident_2013.csv.bz2")
+fars_read("data/accident_2013.csv.bz2") %>% 
+  head(5)
 ```
 
 ## Creating file name
 
 The `"make_filename"` function generates the filename for a FARS data file based on the input year.
 
-```{r echo = FALSE}
+```{r}
 # Example
-filename_2013 <- make_filename(2013)
+make_filename(2013)
 ```
 
 ## Reading FARS data for multiple years
 
 The `"fars_read_years"` function reads FARS data for multiple years and combines them into a tibble. It takes a vector of years as input and returns a list of tibbles, each containing data for a specific year.
 
-```{r echo = FALSE}
+```{r}
 # Example
-data_2013_2014 <- fars_read_years(c(2013, 2014))
+fars_read_years(c(2013, 2014)) %>% 
+  lapply(head, n = 5)
 ```
 
 ## Summarizing FARS data for multiple years
 
 The `"fars_summarize_years"` function summarizes FARS data for multiple years, counting accidents per month. It takes a vector of years as input and returns a tibble summarizing the number of accidents per month for each year.
 
-```{r echo = FALSE}
+```{r}
 # Example
-summary_2013_2014 <- fars_summarize_years(c(2013, 2014))
+fars_summarize_years(c(2013, 2014)) %>% 
+  head(5)
 ```
 
 ## Mapping FARS data for a specific state and year
 
 The `"fars_summarize_years"` function shows FARS data on a map for a specific state and year. It takes the state number and year as input and returns a plot of FARS data on a map.
 
-```{r echo = FALSE}
+```{r}
 # Example
-map_2013 <- fars_map_state(50, 2013)
+fars_map_state(50, 2013)
 ```
+
 This vignette provides an overview of the functionalities offered by the `"farsfunctions"` package. For more detailed information on each function, refer to the function documentation.
 
