@@ -16,6 +16,7 @@ RoxygenNote: 7.2.3
 Import:
     readr,
     dplyr,
+    tibble,
     tidyr,
     maps,
     graphics
