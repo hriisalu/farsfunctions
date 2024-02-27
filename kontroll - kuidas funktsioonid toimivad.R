@@ -3,9 +3,10 @@
 library(readr)
 library(dplyr)
 
+setwd("C:/Users/hriisalu/OneDrive - Tartu Ülikool/Dokumendid/Koolitus/Coursera/Building packages/farsfunctions")
 setwd("C:/Users/hriisalu/Documents/Coursera/Building packages/farsfunctions")
 
-source("fars_functions_hr.R")
+source("R/fars_functions_hr.R")
 
 #data <- read_csv("fars_data/data/accident_2013.csv.bz2")
 kuki <- fars_read("data/accident_2013.csv.bz2")

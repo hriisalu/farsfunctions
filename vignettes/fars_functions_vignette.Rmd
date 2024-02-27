@@ -21,7 +21,7 @@ library(dplyr)
 
 ## Introduction
 
-The `"farsfunctions"` package provides functions to work with the Fatality Analysis Reporting System (FARS) data. FARS is a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States. This vignette explains the functionalities provided by this package. 
+The `"farsfunctions"` package provides functions to work with the [Fatality Analysis Reporting System (FARS)](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) data. FARS is a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States. This vignette explains the functionalities provided by this package. 
 
 ## Reading FARS data
 
@@ -61,6 +61,7 @@ The `"fars_summarize_years"` function summarizes FARS data for multiple years, c
 fars_summarize_years(c(2013, 2014)) %>% 
   head(5)
 ```
+
 
 ## Mapping FARS data for a specific state and year
 
