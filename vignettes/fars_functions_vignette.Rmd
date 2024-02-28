@@ -23,12 +23,17 @@ library(dplyr)
 
 The `"farsfunctions"` package provides functions to work with the [Fatality Analysis Reporting System (FARS)](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) data. FARS is a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States. This vignette explains the functionalities provided by this package. 
 
+```{r}
+print(getwd())
+```
+
 ## Reading FARS data
 
 The `"fars_read"` function allows users to read FARS data from a csv file. It takes the path to the csv file as input and returns a tibble containing the data. If the file does not exist, an error message is displayed.
 
 ```{r}
 # Example
+print(getwd())
 fars_read("accident_2013.csv.bz2") %>% 
 #fars_read(system.file("data", "accident_2013.csv.bz2", package = "farsfunctions")) %>% 
   head(5)
