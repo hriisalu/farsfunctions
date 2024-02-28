@@ -25,14 +25,25 @@
 #'
 #' @export
 #'
+# fars_read <- function(filename) {
+#   if(!file.exists(filename))
+#     stop("file '", filename, "' does not exist")
+#   data <- suppressMessages({
+#     readr::read_csv(filename, progress = FALSE)
+#   })
+#   tibble::as_tibble(data)
+# }
+
 fars_read <- function(filename) {
-  if(!file.exists(filename))
-    stop("file '", filename, "' does not exist")
+  path <- system.file("data", filename, package = "farsfunctions")
+  if (!file.exists(path))
+    stop("file '", filename, "' does not exist in package data")
   data <- suppressMessages({
-    readr::read_csv(filename, progress = FALSE)
+    readr::read_csv(path, progress = FALSE)
   })
   tibble::as_tibble(data)
 }
+
 
 #' Creating file name
 #'
@@ -51,7 +62,7 @@ fars_read <- function(filename) {
 #'
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("data/accident_%d.csv.bz2", year)
+  sprintf("accident_%d.csv.bz2", year)
 }
 
 #' Reading FARS data for multiple years
