@@ -34,9 +34,19 @@
 #   tibble::as_tibble(data)
 # }
 
+# fars_read <- function(filename) {
+#   path <- system.file("data", filename, package = "farsfunctions")
+#   print(path)
+#   if (!file.exists(path))
+#     stop("file '", filename, "' does not exist in package data")
+#   data <- suppressMessages({
+#     readr::read_csv(path, progress = FALSE)
+#   })
+#   tibble::as_tibble(data)
+# }
+
 fars_read <- function(filename) {
-  path <- system.file("data", filename, package = "farsfunctions")
-  print(path)
+  path <- system.file("data", paste0(filename, ".rda"), package = "farsfunctions")
   if (!file.exists(path))
     stop("file '", filename, "' does not exist in package data")
   data <- suppressMessages({
