@@ -46,7 +46,8 @@
 # }
 
 fars_read <- function(filename) {
-  path <- system.file("data", paste0(filename, ".rda"), package = "farsfunctions")
+  path <- system.file("raw-data", filename, package = "farsfunctions")
+  #path <- filename
   if (!file.exists(path))
     stop("file '", filename, "' does not exist in package data")
   data <- suppressMessages({

@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: hr
 Maintainer: hr <hr@somewhere.net>
 Description: Provides functions to read, analyze, and visualize data from the Fatality Analysis Reporting System (FARS), a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States.
-License: CC0
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
@@ -22,7 +22,3 @@ Import:
     graphics
 Depends: 
     R (>= 2.10)
-Data:
-  accident_2013.csv.bz2
-  accident_2014.csv.bz2
-  accident_2015.csv.bz2
