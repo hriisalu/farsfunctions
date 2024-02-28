@@ -1,13 +1,17 @@
 library(testthat)
 library(farsfunctions)
 library(dplyr)
-
+library(readr)
+library(tibble)
+library(tidyr)
+library(maps)
+library(graphics)
 
 
 # Test for fars_read function
 test_that("fars_read returns a valid tibble", {
-  expect_equal(nrow(fars_read("data/accident_2013.csv.bz2")), 30202)
-  expect_equal(ncol(fars_read("data/accident_2013.csv.bz2")), 50)
+  expect_equal(nrow(fars_read("accident_2013.csv.bz2")), 30202)
+  expect_equal(ncol(fars_read("accident_2013.csv.bz2")), 50)
 })
 
 test_that("fars_read shows an error message if the file does not exist", {

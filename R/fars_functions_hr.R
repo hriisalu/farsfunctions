@@ -46,7 +46,7 @@
 # }
 
 fars_read <- function(filename) {
-  path <- system.file("raw-data", filename, package = "farsfunctions")
+  path <- system.file("extdata", filename, package = "farsfunctions")
   #path <- filename
   if (!file.exists(path))
     stop("file '", filename, "' does not exist in package data")
