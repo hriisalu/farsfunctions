@@ -47,7 +47,7 @@
 
 fars_read <- function(filename) {
   path <- system.file("extdata", filename, package = "farsfunctions")
-  #path <- filename
+  print(path)
   if (!file.exists(path))
     stop("file '", filename, "' does not exist in package data")
   data <- suppressMessages({
@@ -118,8 +118,10 @@ fars_read_years <- function(years) {
 #'
 #' @param years A vector of years, years as integers.
 #'
-#' @importFrom dplyr bind_rows group_by summarize
+#' @importFrom magrittr %
+#' @importFrom dplyr bind_rows group_by summarize n
 #' @importFrom tidyr spread
+#' @importFrom tibble
 #'
 #' @return A tibble summarizing the number of accidents per month for each year
 #'
@@ -135,9 +137,9 @@ fars_summarize_years <- function(years) {
   dat <- fars_read_years(years) %>%
     dplyr::bind_rows() %>%
     dplyr::group_by(year, MONTH) %>%
-    dplyr::summarize(n = n()) %>%
+    dplyr::summarize(n = dplyr::n()) %>%
     tidyr::spread(year, n)
-  return(as_tibble(dat))
+  return(tibble::as_tibble(dat))
 }
 
 
