@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="fars-functions-readme">FARS functions README</h1>
+<h1 id="farsfunctions">farsfunctions</h1>
+<!-- badges: start -->
+
+<p><a href="https://github.com/hriisalu/farsfunctions/actions/workflows/R-CMD-check.yaml"><img src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjIiIGhlaWdodD0iMjAiPgogIDx0aXRsZT5SLUNNRC1jaGVjayAtIG5vIHN0YXR1czwvdGl0bGU+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndvcmtmbG93LWZpbGwiIHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjNDQ0RDU2IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMyNDI5MkUiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic3RhdGUtZmlsbCIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiM5NTlEQTUiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzZBNzM3RCIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPGcgZm9udC1mYW1pbHk9IiYjMzk7RGVqYVZ1IFNhbnMmIzM5OyxWZXJkYW5hLEdlbmV2YSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIj4KICAgICAgPHBhdGggaWQ9IndvcmtmbG93LWJnIiBkPSJNMCwzIEMwLDEuMzQzMSAxLjM1NTIsMCAzLjAyNzAyNzAzLDAgTDEwMiwwIEwxMDIsMjAgTDMuMDI3MDI3MDMsMjAgQzEuMzU1MiwyMCAwLDE4LjY1NjkgMCwxNyBMMCwzIFoiIGZpbGw9InVybCgjd29ya2Zsb3ctZmlsbCkiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPgogICAgICA8dGV4dCBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIj4KICAgICAgICA8dHNwYW4geD0iMjIuMTk4MTk4MiIgeT0iMTUiIGFyaWEtaGlkZGVuPSJ0cnVlIj5SLUNNRC1jaGVjazwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgICAgPHRleHQgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgPHRzcGFuIHg9IjIyLjE5ODE5ODIiIHk9IjE0Ij5SLUNNRC1jaGVjazwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgIDwvZz4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwMikiIGZvbnQtZmFtaWx5PSImIzM5O0RlamFWdSBTYW5zJiMzOTssVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSI+CiAgICAgIDxwYXRoIGQ9Ik0wIDBoNTYuODk3QzU4LjYxIDAgNjAgMS4zNDMgNjAgM3YxNGMwIDEuNjU3LTEuMzkgMy0zLjEwMyAzSDBWMHoiIGlkPSJzdGF0ZS1iZyIgZmlsbD0idXJsKCNzdGF0ZS1maWxsKSIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgIDx0ZXh0IGZpbGw9IiMwMTAxMDEiIGZpbGwtb3BhY2l0eT0iLjMiIGFyaWEtaGlkZGVuPSJ0cnVlIj4KICAgICAgICA8dHNwYW4geD0iNCIgeT0iMTUiPm5vIHN0YXR1czwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgICAgPHRleHQgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgPHRzcGFuIHg9IjQiIHk9IjE0Ij5ubyBzdGF0dXM8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgICA8cGF0aCBmaWxsPSIjOTU5REE1IiBkPSJNMTEgM2MtMy44NjggMC03IDMuMTMyLTcgN2E2Ljk5NiA2Ljk5NiAwIDAgMCA0Ljc4NiA2LjY0MWMuMzUuMDYyLjQ4Mi0uMTQ4LjQ4Mi0uMzMyIDAtLjE2Ni0uMDEtLjcxOC0uMDEtMS4zMDQtMS43NTguMzI0LTIuMjEzLS40MjktMi4zNTMtLjgyMi0uMDc5LS4yMDItLjQyLS44MjMtLjcxNy0uOTktLjI0NS0uMTMtLjU5NS0uNDU0LS4wMS0uNDYzLjU1Mi0uMDA5Ljk0Ni41MDggMS4wNzcuNzE4LjYzIDEuMDU4IDEuNjM2Ljc2IDIuMDM5LjU3Ny4wNjEtLjQ1NS4yNDUtLjc2MS40NDYtLjkzNi0xLjU1Ny0uMTc1LTMuMTg1LS43NzktMy4xODUtMy40NTYgMC0uNzYyLjI3MS0xLjM5Mi43MTgtMS44ODItLjA3LS4xNzUtLjMxNS0uODkyLjA3LTEuODU1IDAgMCAuNTg2LS4xODMgMS45MjUuNzE4YTYuNSA2LjUgMCAwIDEgMS43NS0uMjM2IDYuNSA2LjUgMCAwIDEgMS43NS4yMzZjMS4zMzgtLjkxIDEuOTI1LS43MTggMS45MjUtLjcxOC4zODUuOTYzLjE0IDEuNjguMDcgMS44NTUuNDQ2LjQ5LjcxNyAxLjExMi43MTcgMS44ODIgMCAyLjY4Ni0xLjYzNiAzLjI4LTMuMTk0IDMuNDU2LjI1NC4yMTkuNDczLjYzOS40NzMgMS4yOTUgMCAuOTM2LS4wMDkgMS42ODktLjAwOSAxLjkyNSAwIC4xODQuMTMxLjQwMi40ODEuMzMyQTcuMDExIDcuMDExIDAgMCAwIDE4IDEwYzAtMy44NjctMy4xMzMtNy03LTd6Ij48L3BhdGg+CiAgPC9nPgo8L3N2Zz4KCg==" alt="R-CMD-check" /></a></p>
+<!-- badges: end -->
+
+<h2 id="note-about-the-badge">Note about the badge</h2>
+<p>The package uses the R-CMD-check badge from GitHub instead of Travis
+because Travis does not offer a free version.</p>
+<h2 id="overview">Overview</h2>
+<p>The <code>&quot;farsfunctions&quot;</code> package provides functions to work
+with the <a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars">Fatality
+Analysis Reporting System (FARS)</a> data. FARS is a nationwide census
+providing annually updated data regarding fatal injuries suffered in
+motor vehicle traffic crashes in the United States.</p>
+<h2 id="installation">Installation</h2>
+<p>You can install the development version of
+<code>&quot;farsfunctions&quot;</code> package from GitHub.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;hriisalu/farsfunctions&quot;</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<h2 id="usage">Usage</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Attaching the package</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(farsfunctions)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Reading FARS data</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">fars_read</span>(<span class="st">&quot;accident_2013.csv.bz2&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2&quot;
+
+## # A tibble: 5 × 50
+##   STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT PERSONS COUNTY  CITY   DAY MONTH  YEAR DAY_WEEK  HOUR
+##   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+## 1     1   10001        1        1        0     0          0       8       8    115     0     6     1  2013        1     0
+## 2     1   10002        2        2        0     0          0       2       2     55  1670     3     1  2013        5    21
+## 3     1   10003        1        1        0     0          0       1       1     89  1730     6     1  2013        1    11
+## 4     1   10004        1        1        0     0          0       3       3     73   350     6     1  2013        1    12
+## 5     1   10005        2        2        0     0          0       3       3    125  3050     6     1  2013        1    18
+## # ℹ 34 more variables: MINUTE &lt;dbl&gt;, NHS &lt;dbl&gt;, ROAD_FNC &lt;dbl&gt;, ROUTE &lt;dbl&gt;, TWAY_ID &lt;chr&gt;, TWAY_ID2 &lt;chr&gt;, MILEPT &lt;dbl&gt;,
+## #   LATITUDE &lt;dbl&gt;, LONGITUD &lt;dbl&gt;, SP_JUR &lt;dbl&gt;, HARM_EV &lt;dbl&gt;, MAN_COLL &lt;dbl&gt;, RELJCT1 &lt;dbl&gt;, RELJCT2 &lt;dbl&gt;,
+## #   TYP_INT &lt;dbl&gt;, WRK_ZONE &lt;dbl&gt;, REL_ROAD &lt;dbl&gt;, LGT_COND &lt;dbl&gt;, WEATHER1 &lt;dbl&gt;, WEATHER2 &lt;dbl&gt;, WEATHER &lt;dbl&gt;,
+## #   SCH_BUS &lt;dbl&gt;, RAIL &lt;chr&gt;, NOT_HOUR &lt;dbl&gt;, NOT_MIN &lt;dbl&gt;, ARR_HOUR &lt;dbl&gt;, ARR_MIN &lt;dbl&gt;, HOSP_HR &lt;dbl&gt;,
+## #   HOSP_MN &lt;dbl&gt;, CF1 &lt;dbl&gt;, CF2 &lt;dbl&gt;, CF3 &lt;dbl&gt;, FATALS &lt;dbl&gt;, DRUNK_DR &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Creating file name</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">make_filename</span>(<span class="dv">2013</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;accident_2013.csv.bz2&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Reading FARS data for multiple years</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">fars_read_years</span>(<span class="fu">c</span>(<span class="dv">2013</span>, <span class="dv">2014</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">lapply</span>(head, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Reading file: accident_2013.csv.bz2 
+## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2&quot;
+## Successfully read file for year: 2013 
+## Reading file: accident_2014.csv.bz2 
+## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2014.csv.bz2&quot;
+## Successfully read file for year: 2014
+
+## [[1]]
+## # A tibble: 5 × 2
+##   MONTH  year
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1     1  2013
+## 2     1  2013
+## 3     1  2013
+## 4     1  2013
+## 5     1  2013
+## 
+## [[2]]
+## # A tibble: 5 × 2
+##   MONTH  year
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1     1  2014
+## 2     1  2014
+## 3     1  2014
+## 4     1  2014
+## 5     1  2014</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Summarizing FARS data for multiple years</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">fars_summarize_years</span>(<span class="fu">c</span>(<span class="dv">2013</span>, <span class="dv">2014</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Reading file: accident_2013.csv.bz2 
+## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2&quot;
+## Successfully read file for year: 2013 
+## Reading file: accident_2014.csv.bz2 
+## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2014.csv.bz2&quot;
+## Successfully read file for year: 2014
+
+## # A tibble: 5 × 3
+##   MONTH `2013` `2014`
+##   &lt;dbl&gt;  &lt;int&gt;  &lt;int&gt;
+## 1     1   2230   2168
+## 2     2   1952   1893
+## 3     3   2356   2245
+## 4     4   2300   2308
+## 5     5   2532   2596</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Mapping FARS data for a specific state and year</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">fars_map_state</span>(<span class="dv">50</span>, <span class="dv">2013</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2&quot;</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAK30lEQVR4nO3d7W4cRxpD4db93/SuvMECiSWruquqi8w5zw9bRmLpJYcY+XN8fUjBrtMHSH/iQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRcAO9/uv0DRpHfLCaMzff/ggu8Ed1Zt6zPy7wp97QvZc/xUv8sSf0O0XyHi5e4o/m0L2XP8VL/NEcuvfyp3iJP9Wmrj38MV7iTxtTby4U93jhAv/Sm7r38odwgX/pTd17+UO4wJ+KQxef/gwu8Kfi0MWnP4ML/HE/8/Xlm2ccP+BtuMAfw5mJ1eQBPgrAyMWAjxYwcjHeo8VLXI33cHUn7r7+AQN3KT//PgNv/n5r3zXu4eIl7g7cff0TuMTVgauPfwYX+UTgZR8T92gBIzcHbr79KVzm5sDNtz+Fy1wcuPj053ihexP3Xj6BF7o2ce3hU4CpEyI/uSHh7vcBU5dGLj17FjF2Z+bOq6cRY1dmrjx6AWLuysyVRy9AzL0n894miY/TL8TgjZkbb16CGDwj860rMk4+gZi8MHPhyYsAkzdGbrx5DWDyysiVR68ADF4ZufLoFYDBKyNXHr0CMHhn5M6r5wFzb3jtsBdaBD5QvwBzd0buvHoeMHdp5NKzZwFjl0YuPXsWMPZo5LBqws55CzB2a+TWu+cAU7dGbr17Di91beLaw6fwUvcm7r18Ai/0xD9Cc1jOJS/ihe5N3Hv5BF7o4sTFpz/Gy7w7ccZrhf9r8DIXJy4+/TFe5ubEzbc/xIvcnLj59od4kZsTN9/+EC9yceLi0x8DZu6N3Hv5c8DMKZHv35Fy+ZuAmWsj1x4+Axi6NnLt4TOAoWsj1x4+Axi6NXLr3XOIqUszl549iZj6+vLNeE23rkNM3Zm58+ppyNgbXvxmv6xrXoOMXRm68uh5zNjX199MLiP5tp2YuQtTF568BDN3X+q+ixeBBm+L3XbvOtDkZbHLzl0JGr0rdte1a0GzV8WuOnY1aPim2E23rkdN35O759ItqPFrctccugk1f0vulju3oRZQkrvkzI2oDVTkviqu3ItaQUFu5/mJWkJ+7vwLX0GtIT23T59/ofYQnjv8vBdRm8jOnX3dq6hVROeOPu5l1C6Scyff9jpqGcm5k297HbWM4NzBpx1AbSM3d+5lR1DrCMx9/c/pM8JQ+/g695k2XOYfUGsJyh10SiBqOzm5cy6JRK0nJnfMIaGo/aTkTrkjFrWglNwpd8SiFhSSO+SMYNSGFuReUR21/nHUhjJyZ1wRjVpRRu6MK6JBK8qInXFFNmhHGbEzrsgG7SgjdsYV2ZgdhaQOOSMas6OQ1CFnREN2lBI65Y5kxI5iMsccEozYUUzmmEOCATvKiZxzSS5eR0GJg06JhesoKHDQKblwJQUFDjollyXNe9qh3Q+wpGOsfoQtHWP1I2zpGKsfYUvn2P0ASzrH7gdY0g5jrdr9AEt6Yk1rdj/Aks6x+wHgko5HP35AA0s6x+4HWNI5dj/Aks6x+wGWtMDDEu1+gCUdY/UjcC3lBM65JJktnWLzQ6zpFJsfYk2HWPwYezrD3gdZ1Bn2PsiijrD2UTZ1hLWPsqkTbH2YVZ1g68Os6gBLH2dXB1j6OLua4p9j2s2qDrD0cXZ1gKWPs6v32fkNlvWNjcXY+Q2W9Torv8O2Xmfld9jW22z8Fuv6s5F+7nVo47dY18ss/B77epmF32Nf77LvmyzsXfZ9k4Ut9HOZ1n2Xjb3Kuu+ysTfZ9m1W9ibbvg1X2cnAuLIXwHXmQLvgOnOgXXCdOdAuuM4caBdcZwcD47peAVeaA+2CK82BdsGV5kC78Eo7l5jX9QK80lYlvv1+eFWvAGztVGRg1QsAWzsUGdj0CsTafsi8pxJi0SsQe/sp83f/faorYtErAHs7EhnY8xrA4k5EBta8CLA5B9oE2NyByMCWV+FV5xNoFV51PoFWwXXnPrvgynOgXSxvOyueYXu72fAU69vNhqdY32YWPMf+NrPgOfb3lflWrt/e0CP2t5kFz7G/O+63Zb+TLHALP8OvYoF72e8kC1zs+uM3dRezwNdSM+tdCdng9XG9kxvZ7lrECq//f7H74xDbXYxY4eBAh6v59umYWO5qwA6vv321/wNpBq/E136JklftDrgWry/e2v2R9ByuxevLN/d+ID2HrnFneHSxC6F7dKD52D1uTM8udh12jw40HrvHfenZvS7ELtKBxmMX6UDjsYvc98dG2L0uxC7SZ9B47CIdaDx4kdviw3tdB17krvjwWheCN+lA08GbdKDp4E060HTwJh1oOniTDjQdvMnxv7m56f3qB/AmN8WHt7oSvEoHmg5epQNNB6/SgaaDV+lA08GrXBn/tb9xj8Ku0l8Gjceu0oHGY1c5mf7b785udSl2lT6DxmNX6U/i47G7dKDx2F060HjsLh1oPHaXDjQeu0sHGo/dpQONx+7SgcZDd+mv0+dDd+lA86G79DN8PnSZDjQfukwHmg9dpgPNhy5zT3h0pcuh23Sg+dBtOtB86DYdaD50mw40H7pN/4WkfOQ6fQItQK7TgRYg1+lAC5DrdKAFyHU60ALkOh1oAXKdDrQAuU4HWoBcpwMtgK7T30nKh67Tp9B86DYdaD50mzfC7/lf9SN0mz6D5kO36UDzodt0oPnQbTrQfOg2HWg+dJsONB+6TX8nKR+6TgeaD13njvDoQjdA9+lA86H7dKD50H1uCI/ucwd0oQ40H7pQB5oPXagDzYcu1J8k5UP36UDzoft0oPnQffpj0HzoQh1oPnSh68Oj69wC3agDzYdudHl4dJt7oCt1oPnQla4Ojy5zE3Sni8Oju9wFXera8Ogqt0G3Ohf+n98bXeU26FaXhkc3uQ+6VgeaD12rA82HrnVleHSRG6F7vT7WFYAuciNyr36GL0Du1YEWIPfqD0ELkIt1oAXIxV6/vfH43ZBr3Ivc7MLs5Br3Ijf7NPv1+zfINe5FbnZZ9gtd417kZhdkX/TDWH2LXKw/iy9ALtaBFiAX60ALkIt1oAXIxTrQAuRi/cMiBci9OtAC5F4daAFyr/61+ALkWtdkv/7xtZYi1+or3xQgt7p6oOQutyGX6ovbFSCX6suDFiB36iuAF7DSlWxzOStVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgiuZAFc2BKpoDVTQHqmgOVNEcqKI5UEVzoIrmQBXNgSqaA1U0B6poDlTRHKiiOVBFc6CK5kAVzYEqmgNVNAeqaA5U0RyoojlQRXOgivYfH2npm+EL3/oAAAAASUVORK5CYII=" /><!-- --></p>
+<p>For more detailed information on each function, refer to the function
+documentation.</p>
+<h2 id="license">License</h2>
+<p>GPL</p>
+
+</body>
+</html>

@@ -14,6 +14,10 @@ library(dplyr)
 [![R-CMD-check](https://github.com/hriisalu/farsfunctions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hriisalu/farsfunctions/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+## Note about the badge
+
+The package uses the R-CMD-check badge from GitHub instead of Travis because Travis does not offer a free version.
+
 ## Overview
 
 The `"farsfunctions"` package provides functions to work with the [Fatality Analysis Reporting System (FARS)](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) data. FARS is a nationwide census providing annually updated data regarding fatal injuries suffered in motor vehicle traffic crashes in the United States. 

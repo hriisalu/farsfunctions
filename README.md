@@ -8,6 +8,11 @@ FARS functions README
 [![R-CMD-check](https://github.com/hriisalu/farsfunctions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hriisalu/farsfunctions/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+## Note about the badge
+
+The package uses the R-CMD-check badge from GitHub instead of Travis
+because Travis does not offer a free version.
+
 ## Overview
 
 The `"farsfunctions"` package provides functions to work with the
@@ -40,7 +45,7 @@ fars_read("accident_2013.csv.bz2") %>%
   head(5)
 ```
 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2013.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2"
 
     ## # A tibble: 5 × 50
     ##   STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT PERSONS COUNTY  CITY   DAY MONTH  YEAR DAY_WEEK  HOUR
@@ -53,8 +58,8 @@ fars_read("accident_2013.csv.bz2") %>%
     ## # ℹ 34 more variables: MINUTE <dbl>, NHS <dbl>, ROAD_FNC <dbl>, ROUTE <dbl>, TWAY_ID <chr>, TWAY_ID2 <chr>, MILEPT <dbl>,
     ## #   LATITUDE <dbl>, LONGITUD <dbl>, SP_JUR <dbl>, HARM_EV <dbl>, MAN_COLL <dbl>, RELJCT1 <dbl>, RELJCT2 <dbl>,
     ## #   TYP_INT <dbl>, WRK_ZONE <dbl>, REL_ROAD <dbl>, LGT_COND <dbl>, WEATHER1 <dbl>, WEATHER2 <dbl>, WEATHER <dbl>,
-    ## #   SCH_BUS <dbl>, RAIL <chr>, NOT_HOUR <dbl>, NOT_MIN <dbl>, ARR_HOUR <dbl>, ARR_MIN <dbl>, HOSP_HR <dbl>, HOSP_MN <dbl>,
-    ## #   CF1 <dbl>, CF2 <dbl>, CF3 <dbl>, FATALS <dbl>, DRUNK_DR <dbl>
+    ## #   SCH_BUS <dbl>, RAIL <chr>, NOT_HOUR <dbl>, NOT_MIN <dbl>, ARR_HOUR <dbl>, ARR_MIN <dbl>, HOSP_HR <dbl>,
+    ## #   HOSP_MN <dbl>, CF1 <dbl>, CF2 <dbl>, CF3 <dbl>, FATALS <dbl>, DRUNK_DR <dbl>
 
 ``` r
 # Creating file name
@@ -70,10 +75,10 @@ fars_read_years(c(2013, 2014)) %>%
 ```
 
     ## Reading file: accident_2013.csv.bz2 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2013.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2"
     ## Successfully read file for year: 2013 
     ## Reading file: accident_2014.csv.bz2 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2014.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2014.csv.bz2"
     ## Successfully read file for year: 2014
 
     ## [[1]]
@@ -103,10 +108,10 @@ fars_summarize_years(c(2013, 2014)) %>%
 ```
 
     ## Reading file: accident_2013.csv.bz2 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2013.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2"
     ## Successfully read file for year: 2013 
     ## Reading file: accident_2014.csv.bz2 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2014.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2014.csv.bz2"
     ## Successfully read file for year: 2014
 
     ## # A tibble: 5 × 3
@@ -123,7 +128,7 @@ fars_summarize_years(c(2013, 2014)) %>%
 fars_map_state(50, 2013)
 ```
 
-    ## [1] "C:/Users/hriisalu/OneDrive/Documents/Koolitus/Coursera/Building packages/farsfunctions/inst/extdata/accident_2013.csv.bz2"
+    ## [1] "C:/R/R/library/farsfunctions/extdata/accident_2013.csv.bz2"
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
