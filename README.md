@@ -24,31 +24,21 @@ from GitHub.
 
 ``` r
 library(devtools)
-```
-
-    ## Loading required package: usethis
-
-``` r
 devtools::install_github("hriisalu/farsfunctions", build_vignettes = TRUE, force = TRUE)
 ```
 
-    ## Downloading GitHub repo hriisalu/farsfunctions@HEAD
-
     ## ── R CMD build ─────────────────────────────────────────────────────────────────
-    ##       ✔  checking for file 'C:\Users\hriisalu\AppData\Local\Temp\RtmpYzv7Ao\remotes631c613d554d\hriisalu-farsfunctions-9d31933/DESCRIPTION'
-    ##       ─  preparing 'farsfunctions': (865ms)
+    ##          checking for file 'C:\Users\hriisalu\AppData\Local\Temp\Rtmp6B5PJ0\remotes5d1032667470\hriisalu-farsfunctions-82cfcea/DESCRIPTION' ...  ✔  checking for file 'C:\Users\hriisalu\AppData\Local\Temp\Rtmp6B5PJ0\remotes5d1032667470\hriisalu-farsfunctions-82cfcea/DESCRIPTION'
+    ##       ─  preparing 'farsfunctions':
     ##    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
     ##       ─  installing the package to build vignettes
-    ##          creating vignettes ...     creating vignettes ...   ✔  creating vignettes (7.2s)
+    ##          creating vignettes ...     creating vignettes ...   ✔  creating vignettes (6.4s)
     ##       ─  checking for LF line-endings in source and make files and shell scripts
     ##   ─  checking for empty or unneeded directories
     ##    Omitted 'LazyData' from DESCRIPTION
     ##       ─  building 'farsfunctions_0.1.0.tar.gz'
     ##      
     ## 
-
-    ## Installing package into 'C:/R/R/library'
-    ## (as 'lib' is unspecified)
 
 ## Using
 
