@@ -22,70 +22,40 @@ The `"farsfunctions"` package provides functions to work with the [Fatality Anal
 
 You can install the development version of `"farsfunctions"` package from GitHub.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, eval=FALSE}
 library(devtools)
 devtools::install_github("hriisalu/farsfunctions", build_vignettes = TRUE, force = TRUE)
 ```
 
-## Using
-
-### Attaching the package
+## Usage
 
 ```{r}
+# Attaching the package
 library(farsfunctions)
 ```
 
-### Reading FARS data
-
-The `"fars_read"` function allows users to read FARS data from a csv file. It takes the path to the csv file as input and returns a tibble containing the data. If the file does not exist, an error message is displayed.
-
 ```{r}
-# Example
+# Reading FARS data
 fars_read("accident_2013.csv.bz2") %>% 
   head(5)
-```
 
-### Creating file name
-
-The `"make_filename"` function generates the filename for a FARS data file based on the input year.
-
-```{r}
-# Example
+# Creating file name
 make_filename(2013)
-```
 
-### Reading FARS data for multiple years
-
-The `"fars_read_years"` function reads FARS data for multiple years and combines them into a tibble. It takes a vector of years as input and returns a list of tibbles, each containing data for a specific year.
-
-```{r}
-# Example
+# Reading FARS data for multiple years
 fars_read_years(c(2013, 2014)) %>% 
   lapply(head, n = 5)
-```
 
-### Summarizing FARS data for multiple years
-
-The `"fars_summarize_years"` function summarizes FARS data for multiple years, counting accidents per month. It takes a vector of years as input and returns a tibble summarizing the number of accidents per month for each year.
-
-```{r}
-# Example
+# Summarizing FARS data for multiple years
 fars_summarize_years(c(2013, 2014)) %>% 
   head(5)
-```
 
-
-### Mapping FARS data for a specific state and year
-
-The `"fars_summarize_years"` function shows FARS data on a map for a specific state and year. It takes the state number and year as input and returns a plot of FARS data on a map.
-
-```{r}
-# Example
+# Mapping FARS data for a specific state and year
 fars_map_state(50, 2013)
+
 ```
 
 For more detailed information on each function, refer to the function documentation.
-
 
 ## License
 
