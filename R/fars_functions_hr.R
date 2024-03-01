@@ -25,37 +25,16 @@
 #'
 #' @export
 #'
-# fars_read <- function(filename) {
-#   if(!file.exists(filename))
-#     stop("file '", filename, "' does not exist")
-#   data <- suppressMessages({
-#     readr::read_csv(filename, progress = FALSE)
-#   })
-#   tibble::as_tibble(data)
-# }
-
-# fars_read <- function(filename) {
-#   path <- system.file("data", filename, package = "farsfunctions")
-#   print(path)
-#   if (!file.exists(path))
-#     stop("file '", filename, "' does not exist in package data")
-#   data <- suppressMessages({
-#     readr::read_csv(path, progress = FALSE)
-#   })
-#   tibble::as_tibble(data)
-# }
-
 fars_read <- function(filename) {
   path <- system.file("extdata", filename, package = "farsfunctions")
   print(path)
   if (!file.exists(path))
-    stop("file '", filename, "' does not exist in package data")
+    stop("file '", filename, "' does not exist")
   data <- suppressMessages({
     readr::read_csv(path, progress = FALSE)
   })
   tibble::as_tibble(data)
 }
-
 
 #' Creating file name
 #'
@@ -84,6 +63,7 @@ make_filename <- function(year) {
 #'
 #' @param years A vector of years, years as integers.
 #'
+#' @importFrom magrittr %>%
 #' @importFrom dplyr mutate select
 #'
 #' @return A list of tibbles, each containing data for a specific year
@@ -96,6 +76,7 @@ make_filename <- function(year) {
 #'
 #' @export
 #'
+
 fars_read_years <- function(years) {
   lapply(years, function(year) {
     file <- make_filename(year)
@@ -103,8 +84,10 @@ fars_read_years <- function(years) {
     tryCatch({
       dat <- fars_read(file)
       cat("Successfully read file for year:", year, "\n")
-      dplyr::mutate(dat, year = year) %>%
+      dat <- dat %>%
+        dplyr::mutate(year = year) %>%
         dplyr::select(MONTH, year)
+      return(dat)
     }, error = function(e) {
       warning("invalid year: ", year)
       return(NULL)
@@ -112,13 +95,16 @@ fars_read_years <- function(years) {
   })
 }
 
+
+
+
 #' Summarizing FARS data for multiple years
 #'
 #' The function summarizes FARS data for multiple years, counting accidents per month.
 #'
 #' @param years A vector of years, years as integers.
 #'
-#' @importFrom magrittr %
+#' @importFrom magrittr %>%
 #' @importFrom dplyr bind_rows group_by summarize n
 #' @importFrom tidyr spread
 #' @importFrom tibble
@@ -142,7 +128,6 @@ fars_summarize_years <- function(years) {
   return(tibble::as_tibble(dat))
 }
 
-
 #' Mapping FARS data for a specific state and year
 #'
 #' The function shows FARS data on a map for a specific state and year.
@@ -151,7 +136,7 @@ fars_summarize_years <- function(years) {
 #' @param state.num The state number as integer.
 #' @param year The year for which the data is plotted as integer.
 #'
-#' @importFrom dplyr filter mutate select
+#' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom graphics points
 #'

@@ -22,10 +22,9 @@ The `"farsfunctions"` package provides functions to work with the [Fatality Anal
 
 You can install the development version of `"farsfunctions"` package from GitHub.
 
-```{r}
+```{r, echo=FALSE, message=FALSE}
 library(devtools)
 devtools::install_github("hriisalu/farsfunctions", build_vignettes = TRUE, force = TRUE)
-library(farsfunctions)
 ```
 
 ## Using

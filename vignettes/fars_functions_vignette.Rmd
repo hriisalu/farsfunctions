@@ -17,11 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 library(farsfunctions)
 library(dplyr)
-library(tidyr)
-library(readr)
-library(tibble)
-library(maps)
-library(graphics)
+library(knitr)
 ```
 
 ## Introduction

@@ -65,7 +65,7 @@ test_that("fars_map_state shows FARS data on the map", {
 
 test_that("fars_map_state shows an error message if there is no data", {
   expect_error(fars_map_state(50, 2012),
-               "file 'data/accident_2012.csv.bz2' does not exist")
+               "file 'accident_2012.csv.bz2' does not exist")
   expect_error(fars_map_state(85),
                'argument "year" is missing')
 })
