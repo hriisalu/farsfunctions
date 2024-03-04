@@ -107,7 +107,7 @@ fars_read_years <- function(years) {
 #' @importFrom magrittr %>%
 #' @importFrom dplyr bind_rows group_by summarize n
 #' @importFrom tidyr spread
-#' @importFrom tibble
+#' @importFrom tibble as_tibble
 #'
 #' @return A tibble summarizing the number of accidents per month for each year
 #'
